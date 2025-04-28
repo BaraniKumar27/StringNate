@@ -18,8 +18,23 @@ public class StringinatorServiceImpl implements StringinatorService {
     public StringinatorResult stringinate(StringinatorInput input) {
         seenStrings.compute(input.getInput(), (k, v) -> (v == null) ? Integer.valueOf(1) : v + 1);
 
-        StringinatorResult result = new StringinatorResult(input.getInput(), Integer.valueOf(input.getInput().length()));
-        return result;
+        String text = input.getInput().replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+
+        Map<Character, Integer> frequencyMap = new HashMap<>();
+        for (char c : text.toCharArray()) {
+            frequencyMap.put(c, frequencyMap.getOrDefault(c, 0) + 1);
+        }
+
+        char mostFrequentChar = 0;
+        int maxCount = 0;
+        for (Map.Entry<Character, Integer> entry : frequencyMap.entrySet()) {
+            if (entry.getValue() > maxCount) {
+                mostFrequentChar = entry.getKey();
+                maxCount = entry.getValue();
+            }
+        }
+
+        return new StringinatorResult(input.getInput(), input.getInput().length(), mostFrequentChar, maxCount);
     }
 
     @Override
