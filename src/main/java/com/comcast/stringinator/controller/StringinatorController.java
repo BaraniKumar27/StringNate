@@ -30,14 +30,12 @@ public class StringinatorController {
 
     @GetMapping(path = "/stringinate", produces = "application/json")
     public StringinatorResult stringinateGet(@RequestParam(name = "input", required = true) String input) {
-        StringinatorResult result = stringinatorService.stringinate(new StringinatorInput(input));
-        return result;
+        return stringinatorService.stringinate(new StringinatorInput(input));
     }
 
 	@PostMapping(path = "/stringinate", consumes = "application/json", produces = "application/json")
     public StringinatorResult stringinate(@RequestBody StringinatorInput input) {
-        StringinatorResult result = stringinatorService.stringinate(input);
-        return result;
+        return stringinatorService.stringinate(input);
     }
 
     @GetMapping(path = "/stats")
