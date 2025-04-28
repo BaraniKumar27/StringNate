@@ -1,5 +1,10 @@
 package com.comcast.stringinator.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class StringinatorResult {
     private final String input;
     private final Integer length;
@@ -13,27 +18,4 @@ public class StringinatorResult {
         this.mostFrequentCharCount = mostFrequentCharCount;
     }
 
-    public Integer getLength() {
-        return length;
-    }
-
-    public String getInput() {
-        return this.input;
-    }
-
-    public char getMostFrequentChar() {
-        return mostFrequentChar;
-    }
-
-    public void setMostFrequentChar(char mostFrequentChar) {
-        this.mostFrequentChar = mostFrequentChar;
-    }
-
-    public int getMostFrequentCharCount() {
-        return mostFrequentCharCount;
-    }
-
-    public void setMostFrequentCharCount(int mostFrequentCharCount) {
-        this.mostFrequentCharCount = mostFrequentCharCount;
-    }
 }

@@ -1,20 +1,16 @@
 package com.comcast.stringinator.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class StringinatorInput {
     private String input;
-
-    public StringinatorInput() {
-    }
 
     public StringinatorInput(String input) {
         this.input = input;
     }
 
-    public String getInput() {
-        return input;
-    }
 
-    public void setInput(String input) {
-        this.input = input;
-    }
 }
