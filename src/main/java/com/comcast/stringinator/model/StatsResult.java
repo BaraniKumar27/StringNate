@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Set;
+
 
 @Setter
 @Getter
@@ -13,6 +15,6 @@ public class StatsResult {
     private int totalStrings;
     private String mostPopular;
     private String longestInputReceived;
-
+    private Set<String> anagrams;
 
 }
